@@ -24,6 +24,7 @@ class XDo
       winclass : LibC::Char*
       winclassname : LibC::Char*
       winname : LibC::Char*
+      role : LibC::Char*
       pid : LibC::Int
       max_depth : LibC::Long
       only_visible : LibC::Int
