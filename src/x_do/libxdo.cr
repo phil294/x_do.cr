@@ -186,5 +186,6 @@ class XDo
     fun enable_feature = xdo_enable_feature(xdo : XDo*, feature : LibC::Int)
     fun has_feature = xdo_has_feature(xdo : XDo*, feature : LibC::Int) : Status
     fun get_viewport_dimensions = xdo_get_viewport_dimensions(xdo : XDo*, width : LibC::UInt*, height : LibC::UInt*, screen : LibC::Int) : Status
+    fun window_state = xdo_window_state(xdo : XDo*, window : Window, action : LibC::ULong, property : LibC::Char*) : Status
   end
 end

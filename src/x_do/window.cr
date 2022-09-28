@@ -388,4 +388,12 @@ class XDo::Window
     LibXDo.get_window_name(xdo_p, window, out name, out _, out _)
     String.new(name) unless name.null?
   end
+
+  # Add, remove or toggle any of the following *properties*:
+  # `modal`, `sticky`, `maximized_vert`, `maximized_horz`, `shaded`, `skip_taskbar`,
+  # `skip_pager`, `hidden`, `fullscreen`, `above`, `below`, `demands_attention`
+  def set_state(action : StateAction, property : String)
+    property = "_NET_WM_STATE_#{property.upcase}"
+    LibXDo.window_state(xdo_p, window, action.value, property)
+  end
 end

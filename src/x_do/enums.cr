@@ -66,4 +66,10 @@ class XDo
     Success = 0
     Error   = 1
   end
+
+  enum WindowStateAction
+    Remove
+    Add
+    Toggle
+  end
 end
