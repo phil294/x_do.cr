@@ -353,16 +353,25 @@ class XDo::Window
 
   # Kills a window and the client owning it.
   #
-  # To close a window without killing its client, see `#close!`.
+  # To close a window without killing its client, see `#quit!` and `#close!`.
   def kill!
     LibXDo.kill_window(xdo_p, window)
   end
 
-  # Closes a window without trying to kill its client.
+  # Forcefully destroys a window, but without trying to kill its client.
   #
+  # To send a normal close request, see `#quit!`.
   # To kill the client while closing a window, see `#kill!`.
   def close!
     LibXDo.close_window(xdo_p, window)
+  end
+
+  # Closes a window without force. This is the same as e.g. pressing Alt+F4.
+  #
+  # To forcefully destroy the window, see `#close!`.
+  # To kill the client while closing a window, see `#kill!`.
+  def quit!
+    LibXDo.quit_window(xdo_p, window)
   end
 
   # Attempt to find the window's parent.

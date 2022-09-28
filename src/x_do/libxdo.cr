@@ -180,6 +180,7 @@ class XDo
     fun set_desktop_viewport = xdo_set_desktop_viewport(xdo : XDo*, x : LibC::Int, y : LibC::Int) : Status
     fun kill_window = xdo_kill_window(xdo : XDo*, window : Window) : Status
     fun close_window = xdo_close_window(xdo : XDo*, window : Window) : Status
+    fun quit_window = xdo_quit_window(xdo : XDo*, window : Window) : Status
     fun find_window_client = xdo_find_window_client(xdo : XDo*, window : Window, window_ret : Window*, direction : LibC::Int) : Status
     fun get_window_name = xdo_get_window_name(xdo : XDo*, window : Window, name_ret : UInt8**, name_len_ret : LibC::Int*, name_type : LibC::Int*) : Status
     fun disable_feature = xdo_disable_feature(xdo : XDo*, feature : LibC::Int)
