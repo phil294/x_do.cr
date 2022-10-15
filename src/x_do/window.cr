@@ -117,6 +117,18 @@ class XDo::Window
     yield self
   end
 
+  # Clears all given key and relevant mouse modifiers for the window.
+  #
+  # You most likely want to pass the output of `active_modifiers` as *keys*.
+  def clear_active_modifiers(keys : Array(LibXDo::Charcodemap))
+    LibXDo.clear_active_modifiers(xdo_p, window, keys, keys.size)
+  end
+
+  # Set all given key and relevant mouse modifiers for the window.
+  def set_active_modifiers(keys : Array(LibXDo::Charcodemap))
+    LibXDo.set_active_modifiers(xdo_p, window, keys, keys.size)
+  end
+
   # Send some *text* to the window, with *delay* between the keystrokes.
   #
   # ```

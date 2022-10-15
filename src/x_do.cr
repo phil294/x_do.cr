@@ -143,16 +143,16 @@ class XDo
     Array.new(nkeys) { |i| keys[i] }
   end
 
-  # TODO: implement
-  def set_active_modifiers
-    # NOTE: xdo_set_active_modifiers
-    raise "implement me!"
+  # Clears all given key and relevant mouse modifiers.
+  #
+  # You most likely want to pass the output of `active_modifiers` as *keys*.
+  def clear_active_modifiers(keys : Array(LibXDo::Charcodemap))
+    LibXDo.clear_active_modifiers(xdo_p, 0, keys, keys.size)
   end
 
-  # TODO: implement
-  def clear_active_modifiers
-    # NOTE: xdo_clear_active_modifiers
-    raise "implement me!"
+  # Set all given key and relevant mouse modifiers.
+  def set_active_modifiers(keys : Array(LibXDo::Charcodemap))
+    LibXDo.set_active_modifiers(xdo_p, 0, keys, keys.size)
   end
 
   # Returns the `Window` that currently has focus.
