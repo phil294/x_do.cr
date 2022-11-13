@@ -410,6 +410,12 @@ class XDo::Window
     String.new(name) unless name.null?
   end
 
+  # Get the window's name (`WM_CLASS`), if any.
+  def class_name
+    LibXDo.get_window_classname(xdo_p, window, out class_name)
+    String.new(class_name) unless class_name.null?
+  end
+
   # Add, remove or toggle any of the following *properties*:
   # `modal`, `sticky`, `maximized_vert`, `maximized_horz`, `shaded`, `skip_taskbar`,
   # `skip_pager`, `hidden`, `fullscreen`, `above`, `below`, `demands_attention`

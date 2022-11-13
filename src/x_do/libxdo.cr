@@ -183,6 +183,7 @@ class XDo
     fun quit_window = xdo_quit_window(xdo : XDo*, window : Window) : Status
     fun find_window_client = xdo_find_window_client(xdo : XDo*, window : Window, window_ret : Window*, direction : LibC::Int) : Status
     fun get_window_name = xdo_get_window_name(xdo : XDo*, window : Window, name_ret : UInt8**, name_len_ret : LibC::Int*, name_type : LibC::Int*) : Status
+    fun get_window_classname = xdo_get_window_classname(xdo : XDo*, window : Window, class_name_ret : UInt8**) : Status
     fun disable_feature = xdo_disable_feature(xdo : XDo*, feature : LibC::Int)
     fun enable_feature = xdo_enable_feature(xdo : XDo*, feature : LibC::Int)
     fun has_feature = xdo_has_feature(xdo : XDo*, feature : LibC::Int) : Status
